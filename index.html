@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Obscure</title>
+    
+    <style>
+        body {
+            background-color: blueviolet;
+        }
+
+        /* CSS pack for password toggle --start */
+
+        .login-input {
+            background-color: #fff;
+            width: 90%;
+            max-width: 300px;
+            border-radius: 8px;
+            padding: 10px 20px;
+            margin: 300px auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .login-input input {
+            width: 100%;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .login-input img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        /* CSS pack for password toggle --end */
+    </style>
+</head>
+
+<body>
+
+    <div class="login-input">
+        <input type="password" placeholder="Password" name="pword" id="pword">
+        <img src="eye-slash-regular.svg" alt="eye-slash" id="eyecon">
+    </div>
+
+    <script>
+
+        // JS pack for password toggle visibility --start
+
+        let eyecon = document.getElementById("eyecon");
+        let pword = document.getElementById("pword");
+
+        eyecon.onclick = function () {
+            if (pword.type == "password") {
+                pword.type = "text";
+                eyecon.src = "eye-regular.svg";
+            } else {
+                pword.type = "password";
+                eyecon.src = "eye-slash-regular.svg";
+            }
+        }
+
+        // JS pack for password toggle visibility --end
+
+    </script>
+</body>
+
+</html>
