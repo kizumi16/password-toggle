@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Obscure</title>
-    
+
     <style>
         body {
             background-color: blueviolet;
@@ -37,6 +37,15 @@
             width: 20px;
             height: 20px;
             cursor: pointer;
+            opacity: 1;
+        }
+
+        .filter {
+
+            /* hex will not work here */
+            /* convert hex to filter in "https://codepen.io/sosuke/pen/Pjoqqp" */
+            
+            filter: invert(45%) sepia(24%) saturate(1280%) hue-rotate(218deg) brightness(88%) contrast(87%);
         }
 
         /* CSS pack for password toggle --end */
@@ -46,8 +55,11 @@
 <body>
 
     <div class="login-input">
+
         <input type="password" placeholder="Password" name="pword" id="pword">
-        <img src="eye-slash-regular.svg" alt="eye-slash" id="eyecon">
+
+        <img src="eye-slash-regular.svg" alt="eye-slash" id="eyecon" class="filter">
+
     </div>
 
     <script>
