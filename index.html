@@ -4,22 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Obscure</title>
+    <title>Password Toggle</title>
 
+    <link rel="stylesheet" href="css/style.css">
     <style>
+        /* page color palette darker to lighter
+
+        #433878
+        #7E60BF
+        #E4B1F0
+        #FFE1FF
+        #fff1ff
+
+         */
+
         body {
-            background-color: blueviolet;
+            background-image: linear-gradient(90deg, #7E60BF, #fff1ff);
+            color: #433878;
+        }
+
+        .container {
+            margin: 50px auto 0px auto;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #433878;
+        }
+
+
+        /* change svg color (optional) */
+        .filter {
+            /* hex will not work here */
+            filter: invert(45%) sepia(24%) saturate(1280%) hue-rotate(218deg) brightness(88%) contrast(87%);
         }
 
         /* CSS pack for password toggle --start */
 
         .login-input {
             background-color: #fff;
-            width: 90%;
+            width: 80%;
             max-width: 300px;
-            border-radius: 8px;
+            border-radius: 5px;
             padding: 10px 20px;
-            margin: 300px auto;
             display: flex;
             align-items: center;
         }
@@ -30,7 +57,7 @@
             border: 0;
             outline: 0;
             color: #555;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .login-input img {
@@ -40,26 +67,33 @@
             opacity: 1;
         }
 
-        .filter {
-
-            /* hex will not work here */
-            /* convert hex to filter in "https://codepen.io/sosuke/pen/Pjoqqp" */
-            
-            filter: invert(45%) sepia(24%) saturate(1280%) hue-rotate(218deg) brightness(88%) contrast(87%);
-        }
-
         /* CSS pack for password toggle --end */
     </style>
 </head>
 
 <body>
 
-    <div class="login-input">
+    <div class="container text-center">
+        <h2>Password Toggle</h2>
+    </div>
+
+    <div class="container login-input">
 
         <input type="password" placeholder="Password" name="pword" id="pword">
 
-        <img src="eye-slash-regular.svg" alt="eye-slash" id="eyecon" class="filter">
+        <img src="img/eye-slash-regular.svg" alt="" id="eyecon" class="filter">
 
+    </div>
+
+    <div class="container text-center">
+        <h4>Want to change eyecon color?</h4>
+        
+
+    </div>
+
+    <div class="container text-center" style="margin-top: 25px;">
+        <a href="http://127.0.0.1/css-color-filter-generator-master/" class="btn">click here</a>
+        <h4 style="margin-top: 25px;">To convert your HEX to CSS Filters</h4>
     </div>
 
     <script>
@@ -72,10 +106,10 @@
         eyecon.onclick = function () {
             if (pword.type == "password") {
                 pword.type = "text";
-                eyecon.src = "eye-regular.svg";
+                eyecon.src = "img/eye-regular.svg";
             } else {
                 pword.type = "password";
-                eyecon.src = "eye-slash-regular.svg";
+                eyecon.src = "img/eye-slash-regular.svg";
             }
         }
 
